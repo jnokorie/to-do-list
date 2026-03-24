@@ -1,7 +1,7 @@
 import ToDoItem from "../ToDoItem/ToDoItem"
 import "./to-do-list.css"
 
-const ToDoList = ({ taskList, isChecked }) => {
+const ToDoList = ({ taskList }) => {
 
     const mappedList = taskList.map((item, index) => {
         return (

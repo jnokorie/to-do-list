@@ -1,0 +1,16 @@
+.input {
+    border: none;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}

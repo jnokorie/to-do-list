@@ -8,6 +8,8 @@ function App() {
 
   const [toDo, setToDo] = useState([])
 
+  const handleDelete = ()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if (e.target[0].value) {
