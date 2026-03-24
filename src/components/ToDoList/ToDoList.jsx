@@ -1,17 +1,20 @@
 import ToDoItem from "../ToDoItem/ToDoItem"
+import "./to-do-list.css"
 
-const ToDoList = ({ taskText, taskList, isChecked }) => {
+const ToDoList = ({ taskList, isChecked }) => {
 
     const mappedList = taskList.map((item, index) => {
-        <li>
-            <ToDoItem taskText={item} />
-        </li>
+        return (
+            <li className="list-item" key={index}>
+                <ToDoItem taskText={item} />
+            </li>
+        )
     })
 
     return (
         <div>
-            <ul>
-
+            <ul className="list-container">
+                {mappedList}
             </ul>
         </div>
     )

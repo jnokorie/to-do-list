@@ -1,6 +1,6 @@
 import AddTask from "./components/addTask/AddTask"
 import ToDoList from "./components/ToDoList/ToDoList"
-import {useState} from "react"
+import { useState } from "react"
 
 import './App.css'
 
@@ -10,20 +10,21 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target[0].value)
-    const value = e.target[0].value
-    setToDo(prev => ([...prev, value]))
-    console.log(toDo)
-
+    if (e.target[0].value) {
+      const value = e.target[0].value
+      setToDo([...toDo, value])
+      console.log(toDo)
+    }
     e.target.reset()
+    return
   }
 
   return (
-  <>
-  <h2>My To-dos</h2>
-  <AddTask handleSubmit={handleSubmit}/>
-  <ToDoList taskList={toDo}/>
-  </>
+    <div className="container">
+      <h2>My To-dos</h2>
+      <AddTask handleSubmit={handleSubmit} />
+      <ToDoList taskList={toDo} />
+    </div>
   )
 }
 

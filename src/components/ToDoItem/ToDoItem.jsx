@@ -1,12 +1,12 @@
-
+import './to-do-item.css'
+import { FaTrash } from 'react-icons/fa'
 
 const ToDoItem = ({ taskText, isChecked, }) => {
     return (
-        <div>
+        <div className="todoitem">
             <input type="checkbox" checked={isChecked} />
-            <p>hello</p>
-            <p>{taskText}</p>
-            <p>-</p>
+            <p className="task-text">{taskText}</p>
+            <FaTrash/>
         </div>
 
     )
