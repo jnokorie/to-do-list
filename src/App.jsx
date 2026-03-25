@@ -7,7 +7,27 @@ import './App.css'
 function App() {
 
   const [toDo, setToDo] = useState([])
-  
+
+
+  let allTasks = []
+  const getAllTasks = () => {
+    fetch("http://localhost:3000/all-tasks", {
+      Method: 'GET',
+      Headers: {
+        Accept: 'application.json',
+        'Content-Type': 'application/json'
+      },
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) =>
+        {console.log(data)
+        setToDo([...toDo, ...data])})
+  }
+
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -40,7 +60,8 @@ function App() {
     <div className="container">
       <div className="title">
         <h2>My To-dos</h2>
-      <button className="button" onClick={() => setToDo([])}>Reset</button>
+        <button className="button" onClick={getAllTasks}>Get All Tasks</button>
+        <button className="button" onClick={() => setToDo([])}>Reset</button>
       </div>
       <AddTask handleSubmit={handleSubmit} />
       <ToDoList taskList={toDo} handleDelete={handleDelete} handleToggle={handleToggle} />
