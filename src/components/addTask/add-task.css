@@ -1,5 +1,9 @@
 .input {
     border: none;
+    outline: none;
+    flex: 1;
+    min-height: 2rem;
+    padding: 0 0.5rem;
 }
 
 .input-wrapper {
@@ -7,6 +11,10 @@
   align-items: center;
   border: 2px solid black;
   border-radius: 4px;
+  justify-content: space-between;
+  width: min(420px, 100%);
+  box-sizing: border-box;
+  padding-right: 0.5rem;
 }
 
 .button{

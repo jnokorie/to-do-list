@@ -3,7 +3,6 @@ import "./add-task.css"
 
 const AddTask = ({handleSubmit,}) => {
     return (
-        <div>
             <form onSubmit={handleSubmit} className="input-wrapper">
                 <input className="input" placeholder="Add a task..." >
                 </input>
@@ -11,7 +10,6 @@ const AddTask = ({handleSubmit,}) => {
                    <FaPlus/>
                 </button>
             </form>
-        </div>
     )
 }
 

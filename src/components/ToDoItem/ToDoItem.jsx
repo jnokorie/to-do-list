@@ -1,20 +1,13 @@
 import './to-do-item.css'
 import { FaTrash } from 'react-icons/fa'
-import {useState} from "react"
 
-const ToDoItem = ({ taskText }) => {
-
-    const [isChecked, setIsChecked] = useState(false)
-
-    const handleChange = (e) =>{
-        setIsChecked(e.target.checked)
-    }
+const ToDoItem = ({ taskText, isChecked, onToggle, onDelete }) => {
 
     return (
         <div className="todoitem">
-            <input className="checkbox" type="checkbox" onChange={handleChange} />
+            <input className="checkbox" type="checkbox" checked={isChecked} onChange={onToggle} />
             <p className="task-text" style={{textDecoration: isChecked ? "line-through" : "none"}}>{taskText}</p>
-            <FaTrash className="bin"/>
+            <FaTrash className="bin" onClick={onDelete}/>
         </div>
 
     )
